@@ -9,7 +9,7 @@ inicio
       
       salarioAcrescimo <- (salario) * 1.3
       
-      Escreval ("O valor do salário com acréscimo de 30% é de R$: ", salarioAcrescimo)
+      Escreval ("O valor do salário com acréscimo de 30% é de: ", salarioAcrescimo)
       
       
 fimalgoritmo
