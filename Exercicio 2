@@ -1,0 +1,15 @@
+algoritmo "Exercicio 2"
+var
+    salario, salarioAcrescimo: real
+inicio
+
+      
+      Escreval("Digite o valor do salário: ")
+      leia(salario)
+      
+      salarioAcrescimo <- (salario) * 1.3
+      
+      Escreval ("O valor do salário com acréscimo de 30% é de R$: ", salarioAcrescimo)
+      
+      
+fimalgoritmo
