@@ -1,0 +1,18 @@
+//Entrada de dados
+	Valor para conversão de grau Celsius para Kelvin
+
+//Processamento
+	Conversão de Celsius para Kelvin (273,15)
+
+//Saída
+	O resultado da conversão
+
+---------------------------
+
+
+
+Leia grauCelsius
+
+conversao = grauCelsius + 273,15
+
+Escreva conversao
