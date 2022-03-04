@@ -1,0 +1,75 @@
+var
+opcao, opcaoTemp, opcaoMoeda : literal
+temp, tempForm, cotacaoDolar, moeda, moedaForm : real
+
+inicio
+
+
+repita
+   escreval()
+   escreval("1 - Conversor de temperatura")
+   escreval("2 - Conversor de moeda")
+   escreval("3 - Sair do sistema")
+   escreva("Informe a opção desejada: ")
+   leia(opcao)
+
+   se ( opcao = "1" ) entao
+      escreval("1 - Deseja converter Fahrenheit para Celsius?")
+      escreval("2 - Deseja converter Celsius para Fahrenheit?")
+      escreval("Informe a opção desejada: ")
+      leia(opcaoTemp)
+
+
+      se ( opcaoTemp = "1" ) entao
+         escreva("Informe a temperatura em Fahrenheit: ")
+         leia(temp)
+         escreval()
+         tempForm <- (temp - 32) / 1.8
+         escreval("Temperatura em Fahrenheit: ", temp, "°F")
+         escreval("Temperatura em Celsius: ", tempForm:4:2, "°C")
+      senao
+         escreva("Informe a temperatura em Celsius: ")
+         leia(temp)
+         escreval()
+         tempForm <- (temp * 1.8) + 32
+         escreval("Temperatura em Celsius: ", temp, "°C")
+         escreval("Temperatura em Fahrenheit: ", tempForm:4:2, "°F")
+      fimse
+      escreval()
+   senao
+      se ( opcao = "2" ) entao
+         escreval("Informe a cotação do dólar: ")
+         leia(cotacaoDolar)
+
+         limpatela
+
+         escreval("1 - Deseja converter dólar para real?")
+         escreval("2 - Deseja converter real para dólar?")
+         escreval("Informe a opção desejada: ")
+         leia(opcaoMoeda)
+
+         se ( opcaoMoeda = "1" ) entao
+            escreva("Qual a quantidade em dólares? ")
+            leia(moeda)
+            escreval()
+            moedaForm <- moeda * cotacaoDolar
+            escreval("Valor em dólar: $", moeda:4:2)
+            escreval("Valor em real: R$", moedaForm:4:2)
+         senao
+            escreva("Qual a quantidade em reais? ")
+            leia(moeda)
+            escreval()
+            moedaForm <- moeda / cotacaoDolar
+            escreval("Valor em real: R$", moeda:4:2)
+            escreval("Valor em dólar: $", moedaForm:4:2)
+         fimse
+         escreval()
+      fimse
+   fimse
+ate opcao = "3"
+
+limpatela
+escreval("Até mais!")
+
+
+fimalgoritmo
