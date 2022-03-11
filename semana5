@@ -1,0 +1,81 @@
+opcao :literal
+i, j : inteiro
+aux1, aux2 : real
+temp, horas: vetor[1..4] de real
+
+procedimento menu()
+inicio
+   escreval()
+   escreval("1 - Celsius para Fahrenheit")
+   escreval("2 - Fahrenheit para Celsius")
+   escreval("3 - Sair")
+   leia(opcao)
+   limpatela
+fimprocedimento
+
+procedimento armazenador()
+inicio
+   para i de 1 ate 4 faca
+      escreva("Informe a temperatura", i, ": ")
+      leia(temp[i])
+      
+      escreva("Informe o horário correspondente: ")
+      leia(horas[i])
+      escreval()
+   fimpara
+   limpatela
+fimprocedimento
+
+procedimento conversor()
+inicio
+metodoBolha()
+
+se ( opcao = "1" ) entao
+   para i de 1 ate 4 faca
+      escreval("Temperatura", temp[i], "°C, registrada às", horas[i], "h corresponde a ", ((temp[i] * 1.8) + 32):4:2, "°F")
+   fimpara
+senao
+   para i de 1 ate 4 faca
+      escreval("Temperatura", temp[i], "°F, registrada às", horas[i], "h corresponde a ", ((temp[i] - 32) / 1.8):4:2, "°C")
+   fimpara
+fimse
+fimprocedimento
+
+procedimento metodoBolha()
+inicio
+para i de 1 ate 4 faca
+   para j de 1 ate 4 faca
+      se ( temp[j] > temp[i] ) entao
+         aux1 <- temp[i]
+         temp[i] <- temp[j]
+         temp[j] <- aux1
+         aux2 <- horas[i]
+         horas[i] <- horas[j]
+         horas[j] <- aux2
+      fimse
+   fimpara
+fimpara
+fimprocedimento
+
+inicio
+escreval("Seja bem vindo!")
+
+repita
+   menu()
+   
+   escolha opcao
+      caso "1"
+         armazenador()
+         conversor()
+      caso "2"
+         armazenador()
+         conversor()
+      caso "3"
+      outrocaso
+         escreval()
+         escreval("Opção inválida. Tente novamente")
+   fimescolha
+ate opcao = "3"
+
+escreval("Até mais!")
+fimalgoritmo
