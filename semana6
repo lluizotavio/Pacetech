@@ -1,0 +1,133 @@
+package ConversorTempEMoeda;
+	
+
+	import java.util.Scanner;
+	
+
+	public class ProjetoSemana06 {
+	
+
+	    public static void main(String[] args) {
+	        
+	        String opcao, opcaoTemp, opcaoMoeda;
+	        float temp, tempFormatada, cotDolar, moeda, moedaFormat;
+	        
+	        Scanner leitor = new Scanner(System.in);
+	        
+	        System.out.println("Seja bem vindo ao meu projeto em JAVA!");
+	        
+	        do{
+	            
+	            System.out.println();
+	            System.out.println("1 - Conversor de temperatura");
+	            System.out.println("2 - Conversor de moeda");
+	            System.out.println("3 - Sair");
+	            System.out.print("Informe a opcao desejada: ");
+	            opcao = leitor.next();
+	            
+	            System.out.println();
+	            
+	            switch(opcao){
+	                case "1":
+	                    do{
+	                        
+	                        System.out.println();
+	                        System.out.println("1 - Converter Celsius para Fahrenheit");
+	                        System.out.println("2 - Converter Fahrenheit para Celsius");
+	                        System.out.println("3 - Voltar");
+	                        System.out.print("Informe a opcao desejada: ");
+	                        opcaoTemp = leitor.next();
+	                        
+	                        System.out.println();
+	                        
+	                        switch(opcaoTemp){
+	                            case "1":
+	                                System.out.print("Informe a temperatura em Celsius: ");
+	                                temp = leitor.nextFloat();
+	                                
+	                                tempFormat = (temperatura * 1.8f) + 32;
+	                                
+	                                System.out.println();
+	                                System.out.println("Temperatura em Celsius: " + String.format("%.2f",temp));
+	                                System.out.println("Temperatura em Fahrenheit: " + String.format("%.2f",tempFormat));
+	                                break;
+	                            case "2":
+	                                System.out.print("Informe a temperatura em Fahrenheit: ");
+	                                temp = leitor.nextFloat();
+	                                
+	                                tempFormat = (temperatura - 32) / 1.8f;
+	                                
+	                                System.out.println();
+	                                System.out.println("Temperatura em Fahrenheit: " + String.format("%.2f",temp));
+	                                System.out.println("Temperatura em Celsius: " + String.format("%.2f",tempFormat));
+	                                break;
+	                            case "3":
+	                                break;
+	                            default:
+	                                System.out.println("Opcao invalida. Tente novamente.");
+	                                break;
+	                        }
+	                        
+	                    } while ( !(opcaoTemp.equals("3")) );
+	                    break;
+	                case "2":
+	                    System.out.println();
+	                    System.out.print("Informe a cotacao do dolar: ");
+	                    cotDolar = leitor.nextFloat();
+	                    
+	                    do{
+	                        
+	                        System.out.println();
+	                        System.out.println("1 - Converter real para dolar");
+	                        System.out.println("2 - Converter dolar para real");
+	                        System.out.println("3 - Voltar");                                
+	                        System.out.print("Informe a opcao desejada: ");
+	                        opcaoMoeda = leitor.next();
+	                        
+	                        System.out.println();
+	                        
+	                        switch(opcaoMoeda){
+	                            case "1":
+	                                System.out.print("Informe a quantia de reais: R$");
+	                                moeda = leitor.nextFloat();
+	                                
+	                                moedaFormat = moeda / cotDolar;
+	                                
+	                                System.out.println();
+	                                System.out.println("Quantia em reais: R$" + String.format("%.2f",moeda));
+	                                System.out.println("Quantia em dolares: $" + String.format("%.2f",moedaForm));                                       
+	                                break;
+	                            case "2":
+	                                System.out.print("Informe a quantia de dolares: $");
+	                                moeda = leitor.nextFloat();
+	                                
+	                                moedaForm = moeda * cotDolar;
+	                                
+	                                System.out.println();
+	                                System.out.println("Quantia em dolares: $" + String.format("%.2f",moeda));
+	                                System.out.println("Quantia em reais: R$" + String.format("%.2f",moedaFormat));
+	                                break;
+	                            case "3":
+	                                break;
+	                            default:
+	                                System.out.println("Opcao invalida. Tente novamente.");
+	                                break;
+	                        }        
+	                        
+	                    } while ( !(opcaoMoeda.equals("3")) );
+	                    break;
+	                case "3":
+	                    break;
+	                default:
+	                    System.out.println("Opcao invalida. Tente novamente.");
+	                    break;
+	            }
+	            
+	        } while ( !(opcao.equals("3")) );
+	        
+	        System.out.println();
+	        System.out.println("Até Mais!");
+	        
+	    }
+	    
+	}
