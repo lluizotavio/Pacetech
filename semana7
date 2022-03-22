@@ -1,0 +1,26 @@
+
+	    public static void main(String[] args) {
+	        
+	        Empregado luiz = new Empregado("Luiz Otávio", 15000);
+	        System.out.println("Salario anual de " + luiz.getPrimeiroNome() + 
+	                ": R$" + String.format("%.2f",luiz.getSalarioAnual()));
+	        
+	        Empregado maria = new Empregado("Maria", "Pinheiro", 5000);
+	        System.out.println("Salario anual de " + maria.getPrimeiroNome() + 
+	                ": R$" + String.format("%.2f",maria.getSalarioAnual()));
+	        
+	        System.out.println();
+	        
+	        luiz.darAumento();
+	        maria.darAumento();
+	        
+	        System.out.println();
+	        
+	        System.out.println("Salario anual de " + luiz.getPrimeiroNome() +
+	                " com aumento: R$" + String.format("%.2f",luiz.getSalarioAnual()));
+	        System.out.println("Salario anual de " + maria.getPrimeiroNome() +
+	                " com aumento: R$" + String.format("%.2f",maria.getSalarioAnual()));
+	        
+	    }
+	    
+	}
